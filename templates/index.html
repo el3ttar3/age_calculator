@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate Your Age</h1>
+        <form method="POST" action="/">
+            <label for="birthdate">Enter your birthdate:</label><br>
+            <input type="date" id="birthdate" name="birthdate" required><br><br>
+            <input type="submit" value="Calculate Age">
+        </form>
+
+        {% if age %}
+        <h2>Your Age is: {{ age }} years old.</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
